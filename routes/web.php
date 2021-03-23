@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EstudianteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('Materia', [MateriaController::class,'index'])->name('Materia.index');
+
+
+Route::get('Estudiante', [EstudianteController::class,'index'])->name('Estudiante.index');
+Route::get('Estudiante/create', [EstudianteController::class,'create'])->name('Estudiante.create');
+Route::post('Estudiante', [EstudianteController::class,'store'])->name('Estudiante.store');
+
